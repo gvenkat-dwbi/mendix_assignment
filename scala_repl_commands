@@ -1,0 +1,15 @@
+//Reading the git log json file into a datafram
+val inputCommitsDF: DataFrame = sparkSession.read.option("multiline", "true").option("mode", "permissive").option("mode", "dropmalformed").json("/inputpath/git-git_commit_log_iso.json").select("commit", "author", "date", "message", "files")
+//Renaming the column names and transforming git commit iso timestamp to date 
+val transformDf: DataFrame = inputCommitsDF.withColumn("commit_id",col(("commit")))
+      .withColumn("author_name",col("author"))
+      .withColumn("commit_date_ts",col("date"))
+      .withColumn("commit_date",col("date").substr(1,10))
+      .withColumn("commit_message",col("message"))
+      .withColumn("commit_date", col("date").substr(1, 10))
+      .withColumn("file1", col("files").getItem(0))
+      .withColumn("file2", col("files").getItem(1))
+      .withColumn("file3", col("files").getItem(2))
+      .drop("commit", "message", "files", "author", "date", "message")
+//Writing the final output data to the hdfs location
+transformDf.write.format("orc").mode(SaveMode.Append).save("outputPath")
