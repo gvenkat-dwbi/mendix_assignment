@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<workflow-app name="${jobName}-${environment}" xmlns="uri:oozie:workflow:0.4">
+    <global>
+        --will add oozie server details>
+    </global>
+
+    <credentials>
+        <credential name="hs2-creds" type="hive2">
+            <property>
+                --will add connection details
+            </property>
+        </credential>
+    </credentials>
+    <start to="git_commits_import" />
+    <action name="git_commits_import" cred="hs2-creds" retry-max="2" retry-interval="1">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            --will add server details (job,connection)
+            <exec>git_log_import.sh</exec>
+            <argument>${wf:id()}</argument>
+            <argument>${userid}</argument>
+            <file>${scriptDir}/git_log_import.sh</file>
+        </shell>
+        <ok to="git_commit_spark_app"/>
+        <error to="fail"/>
+    </action>
+    <action name="git_commit_spark_app" retry-max="1" retry-interval="1">
+        <shell xmlns="uri:oozie:shell-action:0.3">
+            --will add (Spark properties,job,connection)
+            <argument>--class</argument>
+            <argument>class.name</argument>
+            <argument>--principal</argument>
+            <argument>app.jar</argument>
+            <argument>app.conf</argument>
+        </shell>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>consumer_searches pipeline failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

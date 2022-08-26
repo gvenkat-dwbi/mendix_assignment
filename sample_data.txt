@@ -1,0 +1,123 @@
+
+root
+ |-- actor: struct (nullable = true)
+ |    |-- avatar_url: string (nullable = true)
+ |    |-- events_url: string (nullable = true)
+ |    |-- followers_url: string (nullable = true)
+ |    |-- following_url: string (nullable = true)
+ |    |-- gists_url: string (nullable = true)
+ |    |-- gravatar_id: string (nullable = true)
+ |    |-- html_url: string (nullable = true)
+ |    |-- id: long (nullable = true)
+ |    |-- login: string (nullable = true)
+ |    |-- node_id: string (nullable = true)
+ |    |-- organizations_url: string (nullable = true)
+ |    |-- received_events_url: string (nullable = true)
+ |    |-- repos_url: string (nullable = true)
+ |    |-- site_admin: boolean (nullable = true)
+ |    |-- starred_url: string (nullable = true)
+ |    |-- subscriptions_url: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |    |-- url: string (nullable = true)
+ |-- commit_id: string (nullable = true)
+ |-- commit_url: string (nullable = true)
+ |-- created_at: string (nullable = true)
+ |-- event: string (nullable = true)
+ |-- id: long (nullable = true)
+ |-- issue: struct (nullable = true)
+ |    |-- active_lock_reason: string (nullable = true)
+ |    |-- assignee: string (nullable = true)
+ |    |-- assignees: array (nullable = true)
+ |    |    |-- element: string (containsNull = true)
+ |    |-- author_association: string (nullable = true)
+ |    |-- body: string (nullable = true)
+ |    |-- closed_at: string (nullable = true)
+ |    |-- comments: long (nullable = true)
+ |    |-- comments_url: string (nullable = true)
+ |    |-- created_at: string (nullable = true)
+ |    |-- draft: boolean (nullable = true)
+ |    |-- events_url: string (nullable = true)
+ |    |-- html_url: string (nullable = true)
+ |    |-- id: long (nullable = true)
+ |    |-- labels: array (nullable = true)
+ |    |    |-- element: string (containsNull = true)
+ |    |-- labels_url: string (nullable = true)
+ |    |-- locked: boolean (nullable = true)
+ |    |-- milestone: string (nullable = true)
+ |    |-- node_id: string (nullable = true)
+ |    |-- number: long (nullable = true)
+ |    |-- performed_via_github_app: string (nullable = true)
+ |    |-- pull_request: struct (nullable = true)
+ |    |    |-- diff_url: string (nullable = true)
+ |    |    |-- html_url: string (nullable = true)
+ |    |    |-- merged_at: string (nullable = true)
+ |    |    |-- patch_url: string (nullable = true)
+ |    |    |-- url: string (nullable = true)
+ |    |-- reactions: struct (nullable = true)
+ |    |    |-- +1: long (nullable = true)
+ |    |    |-- -1: long (nullable = true)
+ |    |    |-- confused: long (nullable = true)
+ |    |    |-- eyes: long (nullable = true)
+ |    |    |-- heart: long (nullable = true)
+ |    |    |-- hooray: long (nullable = true)
+ |    |    |-- laugh: long (nullable = true)
+ |    |    |-- rocket: long (nullable = true)
+ |    |    |-- total_count: long (nullable = true)
+ |    |    |-- url: string (nullable = true)
+ |    |-- repository_url: string (nullable = true)
+ |    |-- state: string (nullable = true)
+ |    |-- state_reason: string (nullable = true)
+ |    |-- timeline_url: string (nullable = true)
+ |    |-- title: string (nullable = true)
+ |    |-- updated_at: string (nullable = true)
+ |    |-- url: string (nullable = true)
+ |    |-- user: struct (nullable = true)
+ |    |    |-- avatar_url: string (nullable = true)
+ |    |    |-- events_url: string (nullable = true)
+ |    |    |-- followers_url: string (nullable = true)
+ |    |    |-- following_url: string (nullable = true)
+ |    |    |-- gists_url: string (nullable = true)
+ |    |    |-- gravatar_id: string (nullable = true)
+ |    |    |-- html_url: string (nullable = true)
+ |    |    |-- id: long (nullable = true)
+ |    |    |-- login: string (nullable = true)
+ |    |    |-- node_id: string (nullable = true)
+ |    |    |-- organizations_url: string (nullable = true)
+ |    |    |-- received_events_url: string (nullable = true)
+ |    |    |-- repos_url: string (nullable = true)
+ |    |    |-- site_admin: boolean (nullable = true)
+ |    |    |-- starred_url: string (nullable = true)
+ |    |    |-- subscriptions_url: string (nullable = true)
+ |    |    |-- type: string (nullable = true)
+ |    |    |-- url: string (nullable = true)
+ |-- node_id: string (nullable = true)
+ |-- performed_via_github_app: string (nullable = true)
+ |-- state_reason: string (nullable = true)
+ |-- url: string (nullable = true)
+
+inputcommitDF:
++--------------------+--------------------+--------------------+--------------------+----------+----------+--------------------+--------------------+------------------------+------------+--------------------+
+|               actor|           commit_id|          commit_url|          created_at|     event|        id|               issue|             node_id|performed_via_github_app|state_reason|                 url|
++--------------------+--------------------+--------------------+--------------------+----------+----------+--------------------+--------------------+------------------------+------------+--------------------+
+|[https://avatars....|                null|                null|2022-08-25T01:45:44Z|    closed|7255410898|[,, [], OWNER,, 2...|CE_lADOH3bOKs5Qeo...|                    null|        null|https://api.githu...|
+|[https://avatars....|aecc1768f032cc4c5...|https://api.githu...|2022-08-25T01:45:44Z|    merged|7255410896|[,, [], OWNER,, 2...|ME_lADOH3bOKs5Qeo...|                    null|        null|https://api.githu...|
+|[https://avatars....|aecc1768f032cc4c5...|https://api.githu...|2022-08-25T01:45:44Z|referenced|7255410894|[,, [], OWNER,, 2...|REFE_lADOH3bOKs5Q...|                    null|        null|https://api.githu...|
+|[https://avatars....|                null|                null|2022-08-25T01:28:17Z|    closed|7255341261|[,, [], OWNER,, 2...|CE_lADOH3bOKs5Qem...|                    null|        null|https://api.githu...|
+|[https://avatars....|bb45df8d4f900e96f...|https://api.githu...|2022-08-25T01:28:17Z|    merged|7255341252|[,, [], OWNER,, 2...|ME_lADOH3bOKs5Qem...|                    null|        null|https://api.githu...|
+|[https://avatars....|bb45df8d4f900e96f...|https://api.githu...|2022-08-25T01:28:17Z|referenced|7255341249|[,, [], OWNER,, 2...|REFE_lADOH3bOKs5Q...|                    null|        null|https://api.githu...|
+|[https://avatars....|                null|                null|2022-08-25T01:22:55Z|    closed|7255324048|[,, [], OWNER, ad...|CE_lADOH3bOKs5Qel...|                    null|        null|https://api.githu...|
+|[https://avatars....|51c5edef1e1b6369d...|https://api.githu...|2022-08-25T01:22:55Z|    merged|7255324040|[,, [], OWNER, ad...|ME_lADOH3bOKs5Qel...|                    null|        null|https://api.githu...|
+|[https://avatars....|51c5edef1e1b6369d...|https://api.githu...|2022-08-25T01:22:55Z|referenced|7255324039|[,, [], OWNER, ad...|REFE_lADOH3bOKs5Q...|                    null|        null|https://api.githu...|
++--------------------+--------------------+--------------------+--------------------+----------+----------+--------------------+--------------------+------------------------+------------+--------------------+
+
+TransformDF:
++----------------------------------------+--------------------+-----------+------------+
+|commit_id                               |commit_date_ts      |commit_date|commit_event|
++----------------------------------------+--------------------+-----------+------------+
+|aecc1768f032cc4c58c25c6830a3d3ab562e26a6|2022-08-25T01:45:44Z|2022-08-25 |merged      |
+|aecc1768f032cc4c58c25c6830a3d3ab562e26a6|2022-08-25T01:45:44Z|2022-08-25 |referenced  |
+|bb45df8d4f900e96fc5ad78719eab5c5bb411792|2022-08-25T01:28:17Z|2022-08-25 |merged      |
+|bb45df8d4f900e96fc5ad78719eab5c5bb411792|2022-08-25T01:28:17Z|2022-08-25 |referenced  |
+|51c5edef1e1b6369dc3d21c7f5686abe5df1187c|2022-08-25T01:22:55Z|2022-08-25 |merged      |
+|51c5edef1e1b6369dc3d21c7f5686abe5df1187c|2022-08-25T01:22:55Z|2022-08-25 |referenced  |
++----------------------------------------+--------------------+-----------+------------+
